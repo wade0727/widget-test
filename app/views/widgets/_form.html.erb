@@ -1,4 +1,4 @@
-<%= form_with(model: widget, local: true) do |form| %>
+<%= simple_form_for @widget do |f| %>
   <% if widget.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(widget.errors.count, "error") %> prohibited this widget from being saved:</h2>
@@ -11,11 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :widget %>
-    <%= form.text_field :widget %>
-  </div>
+  <%= f.input :widget %>
+  <%= f.input :thing %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
 
+
+<<<<<<< HEAD
   <div class="field">
     <%= form.label :thing %>
     <%= form.text_field :thing %>
@@ -29,4 +31,6 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+=======
+>>>>>>> forms
 <% end %>
